@@ -8,6 +8,19 @@ datasource db {
 }
 
 model Skill {
-  id        Int     @id @default(autoincrement())
+  id        Int        @id @default(autoincrement())
   skillName String
+  resources Resource[] // Add this line to define the opposite relation field
+}
+
+model Resource {
+  id                Int     @id @default(autoincrement())
+  firstName         String
+  lastName          String
+  skillId           Int
+  levelOfExpertise  String
+  project           String
+  yearsAtNatterbox  Int
+
+  skill             Skill   @relation(fields: [skillId], references: [id])
 }
