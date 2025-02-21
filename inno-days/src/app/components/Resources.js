@@ -86,7 +86,7 @@ export default function Resources() {
             levelOfExpertise: resource.levelOfExpertise,
             project: resource.project,
             yearsAtNatterbox: resource.yearsAtNatterbox,
-            endDate: resource.endDate // Set endDate field
+            endDate: resource.endDate ? new Date(resource.endDate).toISOString().split('T')[0] : '' // Format endDate
         });
         setIsEditing(true);
         setEditResourceId(id);
@@ -189,7 +189,7 @@ export default function Resources() {
                         <td className="py-2 px-4 border-b">{resource.levelOfExpertise}</td>
                         <td className="py-2 px-4 border-b">{resource.project}</td>
                         <td className="py-2 px-4 border-b">{resource.yearsAtNatterbox}</td>
-                        <td className="py-2 px-4 border-b">{resource.endDate}</td>
+                        <td className="py-2 px-4 border-b">{new Date(resource.endDate).toLocaleDateString('en-GB')}</td>
                         <td className="py-2 px-4 border-b text-right">
                             <div className="flex justify-end space-x-2">
                                 <button
