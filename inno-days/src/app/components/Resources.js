@@ -11,7 +11,8 @@ export default function Resources() {
         skillId: '',
         levelOfExpertise: 'junior',
         project: '',
-        yearsAtNatterbox: ''
+        yearsAtNatterbox: '',
+        endDate: '' // Add endDate field
     });
     const [isEditing, setIsEditing] = useState(false);
     const [editResourceId, setEditResourceId] = useState(null);
@@ -60,7 +61,8 @@ export default function Resources() {
             skillId: '',
             levelOfExpertise: 'junior',
             project: '',
-            yearsAtNatterbox: ''
+            yearsAtNatterbox: '',
+            endDate: '' // Reset endDate field
         });
     }
 
@@ -83,7 +85,8 @@ export default function Resources() {
             skillId: resource.skillId,
             levelOfExpertise: resource.levelOfExpertise,
             project: resource.project,
-            yearsAtNatterbox: resource.yearsAtNatterbox
+            yearsAtNatterbox: resource.yearsAtNatterbox,
+            endDate: resource.endDate // Set endDate field
         });
         setIsEditing(true);
         setEditResourceId(id);
@@ -146,6 +149,14 @@ export default function Resources() {
                     placeholder="Years at Natterbox"
                     style={{ marginBottom: '50px' }}
                 />
+                <input
+                    type="date"
+                    value={resource.endDate}
+                    onChange={(e) => setResource({ ...resource, endDate: e.target.value })}
+                    className="mb-2 px-4 py-2 border rounded"
+                    placeholder="End Date"
+                    style={{ marginBottom: '50px' }}
+                />
                 <button
                     type="button"
                     onClick={handleResource}
@@ -164,6 +175,7 @@ export default function Resources() {
                     <th className="py-2 px-4 border-b">Level of Expertise</th>
                     <th className="py-2 px-4 border-b">Current Project</th>
                     <th className="py-2 px-4 border-b">Years at Natterbox</th>
+                    <th className="py-2 px-4 border-b">End Date</th>
                     <th className="py-2 px-4 border-b">Actions</th>
                 </tr>
                 </thead>
@@ -177,6 +189,7 @@ export default function Resources() {
                         <td className="py-2 px-4 border-b">{resource.levelOfExpertise}</td>
                         <td className="py-2 px-4 border-b">{resource.project}</td>
                         <td className="py-2 px-4 border-b">{resource.yearsAtNatterbox}</td>
+                        <td className="py-2 px-4 border-b">{resource.endDate}</td>
                         <td className="py-2 px-4 border-b text-right">
                             <div className="flex justify-end space-x-2">
                                 <button

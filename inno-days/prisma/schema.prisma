@@ -21,6 +21,7 @@ model Resource {
   levelOfExpertise  String
   project           String
   yearsAtNatterbox  Int
+  endDate           DateTime? // Add endDate field
 
   skill             Skill   @relation(fields: [skillId], references: [id])
 }

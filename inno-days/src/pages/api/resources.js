@@ -9,7 +9,7 @@ export default async function handler(req, res) {
             res.status(200).json(resources);
             break;
         case 'POST':
-            const { firstName, lastName, skillId, levelOfExpertise, project, yearsAtNatterbox } = req.body;
+            const { firstName, lastName, skillId, levelOfExpertise, project, yearsAtNatterbox, endDate } = req.body;
             const newResource = await prisma.resource.create({
                 data: {
                     firstName,
@@ -17,18 +17,22 @@ export default async function handler(req, res) {
                     skillId: Number(skillId),
                     levelOfExpertise,
                     project,
-                    yearsAtNatterbox: Number(yearsAtNatterbox)
+                    yearsAtNatterbox: Number(yearsAtNatterbox),
+                    endDate: new Date(endDate) // Add endDate field
                 },
             });
             res.status(201).json(newResource);
             break;
         case 'PUT':
             const { resourceId, ...updateData } = req.body;
-            if( 'skillId' in req.body) {
+            if ('skillId' in req.body) {
                 updateData.skillId = Number(req.body.skillId);
             }
-            if( 'yearsAtNatterbox' in req.body) {
+            if ('yearsAtNatterbox' in req.body) {
                 updateData.yearsAtNatterbox = Number(req.body.yearsAtNatterbox);
+            }
+            if ('endDate' in req.body) {
+                updateData.endDate = new Date(req.body.endDate);
             }
 
             const updatedResource = await prisma.resource.update({
