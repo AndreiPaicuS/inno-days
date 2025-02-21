@@ -93,30 +93,27 @@ export default function Resources() {
     }
 
     return (
-        <div className="p-4">
-            <h1 className="text-2xl font-bold mb-4">Resources</h1>
-            <form className="mb-4">
+        <div className="p-4 bg-gray-100 min-h-screen">
+            <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Resources</h1>
+            <form className="mb-6 grid grid-cols-2 gap-4 bg-white p-6 rounded-lg shadow-md" style={{ width: '60%', margin: '0 auto' }}>
                 <input
                     type="text"
                     value={resource.firstName}
-                    onChange={(e) => setResource({...resource, firstName: e.target.value})}
-                    className="mb-2 px-4 py-2 border rounded"
+                    onChange={(e) => setResource({ ...resource, firstName: e.target.value })}
+                    className="mb-2 px-4 py-2 border rounded w-full"
                     placeholder="First Name"
-                    style={{marginBottom: '50px'}}
                 />
                 <input
                     type="text"
                     value={resource.lastName}
-                    onChange={(e) => setResource({...resource, lastName: e.target.value})}
-                    className="mb-2 px-4 py-2 border rounded"
+                    onChange={(e) => setResource({ ...resource, lastName: e.target.value })}
+                    className="mb-2 px-4 py-2 border rounded w-full"
                     placeholder="Last Name"
-                    style={{marginBottom: '50px'}}
                 />
                 <select
                     value={resource.skillId}
-                    onChange={(e) => setResource({...resource, skillId: e.target.value})}
-                    className="mb-2 px-4 py-2 border rounded"
-                    style={{marginBottom: '50px'}}
+                    onChange={(e) => setResource({ ...resource, skillId: e.target.value })}
+                    className="mb-2 px-4 py-2 border rounded w-full"
                 >
                     <option value="">Select Skill</option>
                     {skills.map(skill => (
@@ -125,62 +122,58 @@ export default function Resources() {
                 </select>
                 <select
                     value={resource.levelOfExpertise}
-                    onChange={(e) => setResource({...resource, levelOfExpertise: e.target.value})}
-                    className="mb-2 px-4 py-2 border rounded"
-                    style={{marginBottom: '50px'}}
+                    onChange={(e) => setResource({ ...resource, levelOfExpertise: e.target.value })}
+                    className="mb-2 px-4 py-2 border rounded w-full"
                 >
                     <option value="junior">Junior</option>
                     <option value="intermediate">Intermediate</option>
                     <option value="senior">Senior</option>
                 </select>
                 <input
-                    type="text"
-                    value={resource.project}
-                    onChange={(e) => setResource({...resource, project: e.target.value})}
-                    className="mb-2 px-4 py-2 border rounded"
-                    placeholder="Project"
-                    style={{marginBottom: '50px'}}
-                />
-                <input
                     type="number"
                     value={resource.yearsAtNatterbox}
-                    onChange={(e) => setResource({...resource, yearsAtNatterbox: e.target.value})}
-                    className="mb-2 px-4 py-2 border rounded"
+                    onChange={(e) => setResource({ ...resource, yearsAtNatterbox: e.target.value })}
+                    className="mb-2 px-4 py-2 border rounded w-full"
                     placeholder="Years at Natterbox"
-                    style={{marginBottom: '50px'}}
+                />
+                <input
+                    type="text"
+                    value={resource.project}
+                    onChange={(e) => setResource({ ...resource, project: e.target.value })}
+                    className="mb-2 px-4 py-2 border rounded w-full"
+                    placeholder="Current Project"
                 />
                 <input
                     type="date"
                     value={resource.endDate}
-                    onChange={(e) => setResource({...resource, endDate: e.target.value})}
-                    className="mb-2 px-4 py-2 border rounded"
+                    onChange={(e) => setResource({ ...resource, endDate: e.target.value })}
+                    className="mb-2 px-4 py-2 border rounded col-span-2 w-full"
                     placeholder="End Date"
-                    style={{marginBottom: '50px'}}
                 />
                 <button
                     type="button"
                     onClick={handleResource}
-                    className={`px-4 py-2 ${isEditing ? 'bg-yellow-500' : 'bg-blue-500'} text-white rounded hover:${isEditing ? 'bg-yellow-700' : 'bg-blue-700'}`}
+                    className={`px-4 py-2 ${isEditing ? 'bg-yellow-500' : 'bg-blue-500'} text-white rounded hover:${isEditing ? 'bg-yellow-700' : 'bg-blue-700'} col-span-2 w-full`}
                 >
                     {isEditing ? 'Edit Resource' : 'Add Resource'}
                 </button>
             </form>
-            <table className="min-w-full bg-white border border-gray-200">
+            <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
                 <thead>
                 <tr>
-                    <th className="py-2 px-4 border-b text-left">First Name</th>
-                    <th className="py-2 px-4 border-b text-left">Last Name</th>
-                    <th className="py-2 px-4 border-b text-left">Skill</th>
-                    <th className="py-2 px-4 border-b text-left">Level of Expertise</th>
-                    <th className="py-2 px-4 border-b text-left">Years at Natterbox</th>
-                    <th className="py-2 px-4 border-b text-left">Current Project</th>
-                    <th className="py-2 px-4 border-b text-left">End Date</th>
-                    <th className="py-2 px-4 border-b text-left">Actions</th>
+                    <th className="py-2 px-4 border-b text-left bg-gray-200">First Name</th>
+                    <th className="py-2 px-4 border-b text-left bg-gray-200">Last Name</th>
+                    <th className="py-2 px-4 border-b text-left bg-gray-200">Skill</th>
+                    <th className="py-2 px-4 border-b text-left bg-gray-200">Level of Expertise</th>
+                    <th className="py-2 px-4 border-b text-left bg-gray-200">Years at Natterbox</th>
+                    <th className="py-2 px-4 border-b text-left bg-gray-200">Current Project</th>
+                    <th className="py-2 px-4 border-b text-left bg-gray-200">End Date</th>
+                    <th className="py-2 px-4 border-b text-left bg-gray-200">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 {resources.map(resource => (
-                    <tr key={resource.id}>
+                    <tr key={resource.id} className="hover:bg-gray-100">
                         <td className="py-2 px-4 border-b text-left">{resource.firstName}</td>
                         <td className="py-2 px-4 border-b text-left">{resource.lastName}</td>
                         <td className="py-2 px-4 border-b text-left">{skills.find(skill => skill.id === resource.skillId)?.skillName}</td>
