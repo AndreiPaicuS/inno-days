@@ -95,24 +95,25 @@ export default function Resources() {
     return (
         <div className="p-4 bg-gray-100 min-h-screen">
             <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Resources</h1>
-            <form className="mb-6 grid grid-cols-2 gap-4 bg-white p-6 rounded-lg shadow-md" style={{ width: '60%', margin: '0 auto' }}>
+            <form className="mb-6 grid grid-cols-2 gap-4 bg-white p-6 rounded-lg shadow-md"
+                  style={{width: '60%', margin: '0'}}>
                 <input
                     type="text"
                     value={resource.firstName}
-                    onChange={(e) => setResource({ ...resource, firstName: e.target.value })}
+                    onChange={(e) => setResource({...resource, firstName: e.target.value})}
                     className="mb-2 px-4 py-2 border rounded w-full"
                     placeholder="First Name"
                 />
                 <input
                     type="text"
                     value={resource.lastName}
-                    onChange={(e) => setResource({ ...resource, lastName: e.target.value })}
+                    onChange={(e) => setResource({...resource, lastName: e.target.value})}
                     className="mb-2 px-4 py-2 border rounded w-full"
                     placeholder="Last Name"
                 />
                 <select
                     value={resource.skillId}
-                    onChange={(e) => setResource({ ...resource, skillId: e.target.value })}
+                    onChange={(e) => setResource({...resource, skillId: e.target.value})}
                     className="mb-2 px-4 py-2 border rounded w-full"
                 >
                     <option value="">Select Skill</option>
@@ -122,7 +123,7 @@ export default function Resources() {
                 </select>
                 <select
                     value={resource.levelOfExpertise}
-                    onChange={(e) => setResource({ ...resource, levelOfExpertise: e.target.value })}
+                    onChange={(e) => setResource({...resource, levelOfExpertise: e.target.value})}
                     className="mb-2 px-4 py-2 border rounded w-full"
                 >
                     <option value="junior">Junior</option>
@@ -132,21 +133,21 @@ export default function Resources() {
                 <input
                     type="number"
                     value={resource.yearsAtNatterbox}
-                    onChange={(e) => setResource({ ...resource, yearsAtNatterbox: e.target.value })}
+                    onChange={(e) => setResource({...resource, yearsAtNatterbox: e.target.value})}
                     className="mb-2 px-4 py-2 border rounded w-full"
                     placeholder="Years at Natterbox"
                 />
                 <input
                     type="text"
                     value={resource.project}
-                    onChange={(e) => setResource({ ...resource, project: e.target.value })}
+                    onChange={(e) => setResource({...resource, project: e.target.value})}
                     className="mb-2 px-4 py-2 border rounded w-full"
                     placeholder="Current Project"
                 />
                 <input
                     type="date"
                     value={resource.endDate}
-                    onChange={(e) => setResource({ ...resource, endDate: e.target.value })}
+                    onChange={(e) => setResource({...resource, endDate: e.target.value})}
                     className="mb-2 px-4 py-2 border rounded col-span-2 w-full"
                     placeholder="End Date"
                 />
@@ -158,7 +159,7 @@ export default function Resources() {
                     {isEditing ? 'Edit Resource' : 'Add Resource'}
                 </button>
             </form>
-            <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
+            <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-md mt-10">
                 <thead>
                 <tr>
                     <th className="py-2 px-4 border-b text-left bg-gray-200">First Name</th>
