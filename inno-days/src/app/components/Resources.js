@@ -99,24 +99,24 @@ export default function Resources() {
                 <input
                     type="text"
                     value={resource.firstName}
-                    onChange={(e) => setResource({ ...resource, firstName: e.target.value })}
+                    onChange={(e) => setResource({...resource, firstName: e.target.value})}
                     className="mb-2 px-4 py-2 border rounded"
                     placeholder="First Name"
-                    style={{ marginBottom: '50px' }}
+                    style={{marginBottom: '50px'}}
                 />
                 <input
                     type="text"
                     value={resource.lastName}
-                    onChange={(e) => setResource({ ...resource, lastName: e.target.value })}
+                    onChange={(e) => setResource({...resource, lastName: e.target.value})}
                     className="mb-2 px-4 py-2 border rounded"
                     placeholder="Last Name"
-                    style={{ marginBottom: '50px' }}
+                    style={{marginBottom: '50px'}}
                 />
                 <select
                     value={resource.skillId}
-                    onChange={(e) => setResource({ ...resource, skillId: e.target.value })}
+                    onChange={(e) => setResource({...resource, skillId: e.target.value})}
                     className="mb-2 px-4 py-2 border rounded"
-                    style={{ marginBottom: '50px' }}
+                    style={{marginBottom: '50px'}}
                 >
                     <option value="">Select Skill</option>
                     {skills.map(skill => (
@@ -125,9 +125,9 @@ export default function Resources() {
                 </select>
                 <select
                     value={resource.levelOfExpertise}
-                    onChange={(e) => setResource({ ...resource, levelOfExpertise: e.target.value })}
+                    onChange={(e) => setResource({...resource, levelOfExpertise: e.target.value})}
                     className="mb-2 px-4 py-2 border rounded"
-                    style={{ marginBottom: '50px' }}
+                    style={{marginBottom: '50px'}}
                 >
                     <option value="junior">Junior</option>
                     <option value="intermediate">Intermediate</option>
@@ -136,26 +136,26 @@ export default function Resources() {
                 <input
                     type="text"
                     value={resource.project}
-                    onChange={(e) => setResource({ ...resource, project: e.target.value })}
+                    onChange={(e) => setResource({...resource, project: e.target.value})}
                     className="mb-2 px-4 py-2 border rounded"
                     placeholder="Project"
-                    style={{ marginBottom: '50px' }}
+                    style={{marginBottom: '50px'}}
                 />
                 <input
                     type="number"
                     value={resource.yearsAtNatterbox}
-                    onChange={(e) => setResource({ ...resource, yearsAtNatterbox: e.target.value })}
+                    onChange={(e) => setResource({...resource, yearsAtNatterbox: e.target.value})}
                     className="mb-2 px-4 py-2 border rounded"
                     placeholder="Years at Natterbox"
-                    style={{ marginBottom: '50px' }}
+                    style={{marginBottom: '50px'}}
                 />
                 <input
                     type="date"
                     value={resource.endDate}
-                    onChange={(e) => setResource({ ...resource, endDate: e.target.value })}
+                    onChange={(e) => setResource({...resource, endDate: e.target.value})}
                     className="mb-2 px-4 py-2 border rounded"
                     placeholder="End Date"
-                    style={{ marginBottom: '50px' }}
+                    style={{marginBottom: '50px'}}
                 />
                 <button
                     type="button"
@@ -168,28 +168,26 @@ export default function Resources() {
             <table className="min-w-full bg-white border border-gray-200">
                 <thead>
                 <tr>
-                    <th className="py-2 px-4 border-b">ID</th>
-                    <th className="py-2 px-4 border-b">First Name</th>
-                    <th className="py-2 px-4 border-b">Last Name</th>
-                    <th className="py-2 px-4 border-b">Skill</th>
-                    <th className="py-2 px-4 border-b">Level of Expertise</th>
-                    <th className="py-2 px-4 border-b">Current Project</th>
-                    <th className="py-2 px-4 border-b">Years at Natterbox</th>
-                    <th className="py-2 px-4 border-b">End Date</th>
-                    <th className="py-2 px-4 border-b">Actions</th>
+                    <th className="py-2 px-4 border-b text-left">First Name</th>
+                    <th className="py-2 px-4 border-b text-left">Last Name</th>
+                    <th className="py-2 px-4 border-b text-left">Skill</th>
+                    <th className="py-2 px-4 border-b text-left">Level of Expertise</th>
+                    <th className="py-2 px-4 border-b text-left">Years at Natterbox</th>
+                    <th className="py-2 px-4 border-b text-left">Current Project</th>
+                    <th className="py-2 px-4 border-b text-left">End Date</th>
+                    <th className="py-2 px-4 border-b text-left">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 {resources.map(resource => (
                     <tr key={resource.id}>
-                        <td className="py-2 px-4 border-b">{resource.id}</td>
-                        <td className="py-2 px-4 border-b">{resource.firstName}</td>
-                        <td className="py-2 px-4 border-b">{resource.lastName}</td>
-                        <td className="py-2 px-4 border-b">{skills.find(skill => skill.id === resource.skillId)?.skillName}</td>
-                        <td className="py-2 px-4 border-b">{resource.levelOfExpertise}</td>
-                        <td className="py-2 px-4 border-b">{resource.project}</td>
-                        <td className="py-2 px-4 border-b">{resource.yearsAtNatterbox}</td>
-                        <td className="py-2 px-4 border-b">{new Date(resource.endDate).toLocaleDateString('en-GB')}</td>
+                        <td className="py-2 px-4 border-b text-left">{resource.firstName}</td>
+                        <td className="py-2 px-4 border-b text-left">{resource.lastName}</td>
+                        <td className="py-2 px-4 border-b text-left">{skills.find(skill => skill.id === resource.skillId)?.skillName}</td>
+                        <td className="py-2 px-4 border-b text-left">{resource.levelOfExpertise}</td>
+                        <td className="py-2 px-4 border-b text-left">{resource.yearsAtNatterbox}</td>
+                        <td className="py-2 px-4 border-b text-left">{resource.project}</td>
+                        <td className="py-2 px-4 border-b text-left">{new Date(resource.endDate).toLocaleDateString('en-GB')}</td>
                         <td className="py-2 px-4 border-b text-right">
                             <div className="flex justify-end space-x-2">
                                 <button
