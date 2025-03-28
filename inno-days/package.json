@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "npx prisma generate && npx prisma migrate dev --name init && next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "npx prisma generate && npx prisma migrate dev --name init && next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@prisma/client": "^6.4.1",
+    "axios": "^1.8.4",
     "next": "15.1.7",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

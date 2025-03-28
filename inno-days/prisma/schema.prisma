@@ -9,7 +9,7 @@ datasource db {
 
 model Skill {
   id        Int        @id @default(autoincrement())
-  skillName String
+  skillName String     @unique
   resources Resource[] // Add this line to define the opposite relation field
 }
 

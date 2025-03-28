@@ -1,5 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 
+import { addSkill} from "@/utils/skillsUtils";
+
 const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
@@ -10,9 +12,7 @@ export default async function handler(req, res) {
             break;
         case 'POST':
             const { skillName } = req.body;
-            const newSkill = await prisma.skill.create({
-                data: { skillName },
-            });
+            const newSkill = await addSkill(skillName);
             res.status(201).json(newSkill);
             break;
         case 'DELETE':
