@@ -7,9 +7,17 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        roboto: ['"Roboto"', "sans-serif"],
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        cyan: {
+          400: "#00d4ff",
+          600: "#00a3cc",
+        },
+        green: {
+          400: "#00ffab",
+        },
       },
     },
   },
